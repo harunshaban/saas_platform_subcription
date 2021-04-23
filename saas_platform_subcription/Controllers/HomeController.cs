@@ -46,5 +46,10 @@ namespace saas_platform_subcription.Controllers
             return Json(db.Subs.ToList(), JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetSubsById(int id)
+        {
+            return Json(db.Subs.Find(id), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

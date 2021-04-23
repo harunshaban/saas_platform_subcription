@@ -34,6 +34,7 @@ app.controller('DemoCtrl', function ($scope, $http, $interval, Service) {
     vm.countries = [];
     Service.getCountry().then(function (d) {
         vm.countries = d.data;
+        console.log(d.data);
     }, function (d) {
         console.log(d.data);
     });
@@ -45,6 +46,15 @@ app.controller('DemoCtrl', function ($scope, $http, $interval, Service) {
     }, function (d) {
         console.log(d.data)
     });
+
+    vm.sub = {};
+    vm.subs = [];
+    Service.getSub().then(function (d) {
+        vm.subs = d.data;
+    }, function (d) {
+        console.log(d.data)
+    });
+    
 });
 
 app.factory('Service', function ($http) {

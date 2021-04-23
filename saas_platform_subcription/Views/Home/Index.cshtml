@@ -60,7 +60,7 @@
 
   .card .card-8-4 .card-left{ width: 66.66666667%; }
   .card .card-8-4 .card-right{ width: 33.33333333%; }
-}
+
 
 /* -- default theme ------ */
 .card-default{
@@ -120,10 +120,12 @@
                     <span ng-bind-html="country.countryName | highlight: $select.search"></span>
                 </ui-select-choices>
             </ui-select><br />
-            <p>Selected: {{ctrl.country.selected}}</p>
+            @*<p>Selected: {{ctrl.country.selected}}</p>*@
+            <p>Selected: {{ctrl.country.selected.countryName}}</p>
+            @*<p>Region: {{ctrl.country.selected.regionId}}</p>*@
 
-
-            <div ng-repeat="sub in ctrl.subs" class="card">
+            
+            <div ng-hide="!ctrl.country.selected" ng-repeat="sub in ctrl.subs | filter : {id: ctrl.country.selected.regionId}" class="card">
                 <div class="card card-price">
                     <div class="card-img">
                     </div>
@@ -135,7 +137,7 @@
                             <li><b>Included:</b> {{sub.vat}}% VAT </li>
                         </ul>
                         <a href="#" class="btn btn-primary btn-lg btn-block buy-now">
-                            Buy now <span class="glyphicon glyphicon-triangle-right"></span>
+                            Continue <span class="glyphicon glyphicon-triangle-right"></span>
                         </a>
                     </div>
                 </div>
