@@ -1,4 +1,5 @@
-﻿using System;
+﻿using saas_platform_subcription.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,9 @@ namespace saas_platform_subcription.Controllers
 {
     public class HomeController : Controller
     {
+
+        AppDbContext db = new AppDbContext();
+
         public ActionResult Index()
         {
             return View();
@@ -26,5 +30,16 @@ namespace saas_platform_subcription.Controllers
 
             return View();
         }
+
+        public JsonResult GetRegions()
+        {
+            return Json(db.Regions.ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetCountries()
+        {
+            return Json(db.Countries.ToList(), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
