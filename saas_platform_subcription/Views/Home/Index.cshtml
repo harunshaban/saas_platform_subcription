@@ -112,6 +112,7 @@
 
 <div ng-app="demo">
     <div class="ng-cloak" ng-controller="DemoCtrl as ctrl">
+        @* Displaying ui-select with selectize theme*@
         <div class="select-box" ng-if="ctrl.appendToBodyDemo.present">
             <h3>Please Select Your Country: </h3><br />
             <ui-select ng-model="ctrl.country.selected" theme="selectize" ng-disabled="ctrl.disabled" style="width: 300px;" title="Choose a country" append-to-body="true">
@@ -120,11 +121,9 @@
                     <span ng-bind-html="country.countryName | highlight: $select.search"></span>
                 </ui-select-choices>
             </ui-select><br />
-            @*<p>Selected: {{ctrl.country.selected}}</p>*@
             <p>Selected: {{ctrl.country.selected.countryName}}</p>
-            @*<p>Region: {{ctrl.country.selected.regionId}}</p>*@
 
-            
+            @* Display in Card only by selected country *@
             <div ng-hide="!ctrl.country.selected" ng-repeat="sub in ctrl.subs | filter : {id: ctrl.country.selected.regionId}" class="card">
                 <div class="card card-price">
                     <div class="card-img">
@@ -136,6 +135,7 @@
                             <li>Yearly subscription {{sub.yearly}} %</li>
                             <li><b>Included:</b> {{sub.vat}}% VAT </li>
                         </ul>
+                        @* Only for show DEMO BTN *@
                         <a href="#" class="btn btn-primary btn-lg btn-block buy-now">
                             Continue <span class="glyphicon glyphicon-triangle-right"></span>
                         </a>

@@ -176,6 +176,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Screens\Screen01.PNG" />
+    <Content Include="Screens\Screen02.PNG" />
+    <Content Include="Screens\Screen03.PNG" />
+    <Content Include="Screens\Screen04.PNG" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
