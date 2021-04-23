@@ -32,16 +32,24 @@ app.controller('DemoCtrl', function ($scope, $http, $interval, Service) {
 
     vm.country = {};
     vm.countries = [];
-
     Service.getCountry().then(function (d) {
         vm.countries = d.data;
     }, function (d) {
         console.log(d.data);
+    });
+
+    vm.sub = {};
+    vm.subs = [];
+    Service.getSub().then(function (d) {
+        vm.subs = d.data;
+    }, function (d) {
+        console.log(d.data)
     });
 });
 
 app.factory('Service', function ($http) {
     var res = {};
     res.getCountry = function () { return $http({ method: 'GET', dataType: 'jsonp', url: '/Home/GetCountries' }); }
+    res.getSub = function () { return $http({ method: 'GET', dataType: 'jsonp', url: '/Home/GetSubs' }); }
     return res;
 });

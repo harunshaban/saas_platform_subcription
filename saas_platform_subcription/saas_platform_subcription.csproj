@@ -154,10 +154,15 @@
     <Compile Include="Migrations\202104231016113_region_country_tbl01.designer.cs">
       <DependentUpon>202104231016113_region_country_tbl01.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104231445358_sub01.cs" />
+    <Compile Include="Migrations\202104231445358_sub01.designer.cs">
+      <DependentUpon>202104231445358_sub01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\Sub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1010,6 +1015,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104231016113_region_country_tbl01.resx">
       <DependentUpon>202104231016113_region_country_tbl01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231445358_sub01.resx">
+      <DependentUpon>202104231445358_sub01.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

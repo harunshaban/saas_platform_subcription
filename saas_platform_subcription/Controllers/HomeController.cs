@@ -41,5 +41,10 @@ namespace saas_platform_subcription.Controllers
             return Json(db.Countries.ToList(), JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetSubs()
+        {
+            return Json(db.Subs.ToList(), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

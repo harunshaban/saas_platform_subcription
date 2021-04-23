@@ -22,6 +22,7 @@ namespace saas_platform_subcription.Models
 
         public System.Data.Entity.DbSet<Country> Countries { get; set; }
         public System.Data.Entity.DbSet<Region> Regions { get; set; }
+        public System.Data.Entity.DbSet<Sub> Subs { get; set; }
 
     }
 }
